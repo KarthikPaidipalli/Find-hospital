@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "findhospital",
+    "slug": "findhospital",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
