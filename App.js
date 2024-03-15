@@ -70,23 +70,6 @@ export default function App() {
       setSelectedMarker(null); // Reset selected marker
     }
   };
-
-  const handleGoToNextHospital = () => {
-    if (currentHospitalIndex < hospitals.length - 1) {
-      setCurrentHospitalIndex(currentHospitalIndex + 1);
-      const hospital = hospitals[currentHospitalIndex + 1];
-      animateToMarker(hospital);
-    }
-  };
-
-  const handleGoToPreviousHospital = () => {
-    if (currentHospitalIndex > 0) {
-      setCurrentHospitalIndex(currentHospitalIndex - 1);
-      const hospital = hospitals[currentHospitalIndex - 1];
-      animateToMarker(hospital);
-    }
-  };
-
   if (loading) {
     return (
       <View style={[styles.container, styles.loadingContainer]}>
@@ -137,12 +120,6 @@ export default function App() {
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleGoToCurrentLocation} style={styles.button}>
           <MaterialIcons name="my-location" size={24} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleGoToPreviousHospital} style={styles.button}>
-          <MaterialIcons name="navigate-before" size={24} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleGoToNextHospital} style={styles.button}>
-          <MaterialIcons name="navigate-next" size={24} color="black" />
         </TouchableOpacity>
       </View>
       {selectedMarker && (
